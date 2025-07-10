@@ -3959,6 +3959,10 @@ input[type="button"].btn-block {
   display: block;
 }
 
+.ml-auto, .mx-auto {
+	margin-left: 0 !important;
+}
+
 .navbar {
   position: relative;
   display: -ms-flexbox;
@@ -8922,7 +8926,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .text-muted {
-  color: #6c757d !important;
+  color: #5b6268  !important;
 }
 
 .text-black-50 {
