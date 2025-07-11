@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Manalith Studios</title>
+  <style>
+    /* Reset and base styles */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f9fc;
+      color: #2c3e50;
+      line-height: 1.6;
+    }
+    a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 6px;
+    }
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1400px;
+      margin: auto;
+      padding: 0 15px;
+    }
+
+    /* Header */
+    header {
+      background-color: #1abc9c;
+	  background: url('img/header-bg.jpg') center/cover no-repeat;
+      color: white;
+      padding: 8rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header img {
+      margin-right: 1rem;
+    }
+
+    header h1 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    /* Section titles */
+    h2.section-title {
+      text-align: center;
+      margin: 3rem 0 1rem;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #34495e;
+    }
+
+    /* Project Cards Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(360px,1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .project-card {
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+    }
+
+    .project-image {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 1rem 1.25rem 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-desc {
+      flex-grow: 1;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* Platform buttons */
+    .platform-buttons {
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .platform-buttons a {
+      background-color: #2980b9;
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: 0 2px 5px rgb(0 0 0 / 0.15);
+      transition: background-color 0.3s ease;
+    }
+
+    .platform-buttons a:hover,
+    .platform-buttons a:focus {
+      background-color: #1f6391;
+    }
+
+    /* Awards thumbnails */
+    .awards {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .awards img {
+      width: 32px;
+      height: 32px;
+      border-radius: 5px;
+      object-fit: contain;
+      border: 1px solid #ccc;
+      background-color: white;
+      box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+    }
+
+    /* Team Section */
+    .team-intro {
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      font-size: 1.1rem;
+      color: #34495e;
+      text-align: center;
+    }
+
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .member-card {
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+      padding: 1rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .member-card:hover {
+      box-shadow: 0 10px 20px rgb(0 0 0 / 0.15);
+    }
+
+    .member-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.75rem;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    }
+
+    .member-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+      color: #2c3e50;
+    }
+
+    .member-job {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #7f8c8d;
+      margin-bottom: 0.75rem;
+    }
+
+    .member-projects a {
+      font-size: 0.9rem;
+      color: #2980b9;
+      font-weight: 600;
+    }
+
+    /* Contact info */
+    .contact {
+      background-color: #1abc9c;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 1rem;
+      box-shadow: inset 0 0 8px rgb(0 0 0 / 0.1);
+    }
+
+    .contact a {
+      color: #eafaf9;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+      }
+      header img {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+      }
+    }
+	
+	.rewards {
+      margin-top: 15px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .rewards li::before {
+      content: "\f559";
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container" style="display:flex; align-items:center; justify-content:center;">
+      <img src="img/logos/manalith.png" alt="GameDev Logo" />
+    </div>
+  </header>
+
+  <!-- Projects Section -->
+  <section id="projects" class="container" tabindex="-1">
+    <h2 class="section-title">PROJECTS</h2>
+    <div class="projects-grid" role="list">
+      <!-- Project Card 1 -->
+      <article class="project-card" role="listitem" aria-labelledby="proj1-title">
+        <img src="img/portfolio/03-thumbnailnew.jpg" alt="Screenshot from Fantasy Quest" class="project-image" />
+        <div class="project-content">
+          <h3 id="proj1-title">Fantasy Quest</h3>
+		  <div class="platform-buttons" aria-label="Platforms where Fantasy Quest is available">
+            <a href="https://store.steampowered.com/app/123456/FantasyQuest" target="_blank" rel="noopener">Steam</a>
+            <a href="https://www.epicgames.com/store/en-US/p/fantasy-quest" target="_blank" rel="noopener">Epic Games</a>
+            <a href="https://play.google.com/store/apps/details?id=com.pixelforge.fantasyquest" target="_blank" rel="noopener">Google Play</a>
+          </div>
+          <p class="project-desc">
+            An immersive open-world RPG that takes players on an epic journey through enchanted lands and mythic battles.
+          </p>
+		  <ul class="rewards">
+            <li>Best Indie Game 2023</li>
+            <li>Players' Choice Award</li>
+          </ul>
+          
+        </div>
+      </article>
+
+      <!-- Project Card 2 -->
+      <article class="project-card" role="listitem" aria-labelledby="proj2-title">
+        <img src="https://via.placeholder.com/400x160?text=Project+2+Image" alt="Screenshot from Space Savers" class="project-image" />
+        <div class="project-content">
+          <h3 id="proj2-title">Space Savers</h3>
+          <p class="project-desc">
+            A fast-paced multiplayer space shooter with customizable ships and dynamic environments.
+          </p>
+          <div class="platform-buttons" aria-label="Platforms where Space Savers is available">
+            <a href="https://store.steampowered.com/app/654321/SpaceSavers" target="_blank" rel="noopener">Steam</a>
+            <a href="https://www.xbox.com/en-US/games/space-savers" target="_blank" rel="noopener">Xbox</a>
+            <a href="https://apps.apple.com/app/space-savers/id123456789" target="_blank" rel="noopener">App Store</a>
+          </div>
+          <div class="awards" aria-label="Awards won by Space Savers">
+            <img src="https://via.placeholder.com/32x32?text=C" alt="Top Multiplayer Experience" title="Top Multiplayer Experience" />
+          </div>
+        </div>
+      </article>
+
+      <!-- Project Card 3 -->
+      <article class="project-card" role="listitem" aria-labelledby="proj3-title">
+        <img src="https://via.placeholder.com/400x160?text=Project+3+Image" alt="Screenshot from Pixel Racers" class="project-image" />
+        <div class="project-content">
+          <h3 id="proj3-title">Pixel Racers</h3>
+          <p class="project-desc">
+            A retro-style 2D racing game with fun tracks and competitive online leaderboards.
+          </p>
+          <div class="platform-buttons" aria-label="Platforms where Pixel Racers is available">
+            <a href="https://store.steampowered.com/app/789012/PixelRacers" target="_blank" rel="noopener">Steam</a>
+            <a href="https://www.nintendo.com/games/detail/pixel-racers-switch" target="_blank" rel="noopener">Nintendo Switch</a>
+          </div>
+          <div class="awards" aria-label="Awards won by Pixel Racers">
+            <img src="https://via.placeholder.com/32x32?text=D" alt="Best Retro Game" title="Best Retro Game" />
+            <img src="https://via.placeholder.com/32x32?text=E" alt="Player Choice Award" title="Player Choice Award" />
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="container" tabindex="-1">
+    <h2 class="section-title">DEVELOPERS</h2>
+    <p class="team-intro">
+      PixelForge Studio is a passionate game development team dedicated to crafting memorable games with innovative design, stunning art, and captivating stories. Our eight talented members collaborate across different disciplines to bring these games to life.
+    </p>
+    <div class="members-grid" role="list">
+      <!-- Member 1 -->
+      <article class="member-card" role="listitem">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Portrait of Alex Johnson" class="member-photo" />
+        <div class="member-name">Alex Johnson</div>
+        <div class="member-job">Lead Game Designer</div>
+        <div class="member-projects">
+          <a href="https://github.com/alexjohnson" target="_blank" rel="noopener" aria-label="Alex Johnson's other projects">Other projects</a>
+        </div>
+      </article>
+      <!-- Member 2 -->
+      <article class="member-card" role="listitem">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Portrait of Maria Chen" class="member-photo" />
+        <div class="member-name">Maria Chen</div>
+        <div class="member-job">Lead Programmer</div>
+        <div class="member-projects">
+          <a href="https://github.com/mariachen" target="_blank" rel="noopener" aria-label="Maria Chen's other projects">Other projects</a>
+        </div>
+      </article>
+      <!-- Member 3 -->
+      <article class="member-card" role="listitem">
+        <img src="https://randomuser.me/api/portraits/men/53.jpg" alt="Portrait of Liam Smith" class="member-photo" />
+        <div class="member-name">Liam Smith</div>
+        <div class="member-job">Art Director</div>
+        <div class="member-projects">
+          <a href="https://behance.net/liamsmith" target="_blank" rel="noopener" aria-label="Liam Smith's other projects">Other projects</a>
+        </div>
+      </article>
+      <!-- Member 4 -->
+      <article class="member-card" role="listitem">
+        <img src="https://randomuser.me/api/portraits/women/26.jpg" alt="Portrait of Sara Lopez" class="member-photo" />
+        <div class="member-name">Sara Lopez</div>
+        <div class="member-job">3D Artist</div>
+        <div class="member-projects">
+          <a href="https://artstation.com/saralopez" target="_blank" rel="noopener" aria-label="Sara Lopez's other projects">Other projects</a>
+        </div>
+      </article>
+      <!-- Member 5 -->
+      <article class="member-card" role="listitem">
+        <img src="https://randomuser.me/api/portraits/men/15.jpg" alt="Portrait of Ethan Wright" class="member-photo" />
+        <div class="member-name">Ethan Wright</div>
+        <div class="member-job">Sound Designer</div>
+        <div class="member-projects">
+          <a href="https://soundcloud.com/ethanwright" target="_blank" rel="noopener" aria-label="Ethan Wright's other projects">Other projects</a>
+        </div>
+      </article>
+      <!-- Member 6 -->
+      <article class="member-card" role="listitem">
+        <img src="https://randomuser.me/api/portraits/women/39.jpg" alt="Portrait of Chloe Davis" class="member-photo" />
+        <div class="member-name">Chloe Davis</div>
+        <div class="member-job">UI/UX Designer</div>
+        <div class="member-projects">
+          <a href="https://dribbble.com/chloedavis" target="_blank" rel="noopener" aria-label="Chloe Davis's other projects">Other projects</a>
+        </div>
+      </article>
+      <!-- Member 7 -->
+      <article class="member-card" role="listitem">
+        <img src="https://randomuser.me/api/portraits/men/48.jpg" alt="Portrait of Noah Martinez" class="member-photo" />
+        <div class="member-name">Noah Martinez</div>
+        <div class="member-job">Quality Assurance Lead</div>
+        <div class="member-projects">
+          <a href="https://linkedin.com/in/noahmartinez" target="_blank" rel="noopener" aria-label="Noah Martinez's other projects">Other projects</a>
+        </div>
+      </article>
+      <!-- Member 8 -->
+      <article class="member-card" role="listitem">
+        <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Portrait of Emma Wilson" class="member-photo" />
+        <div class="member-name">Emma Wilson</div>
+        <div class="member-job">Marketing Manager</div>
+        <div class="member-projects">
+          <a href="https://linkedin.com/in/emmawilson" target="_blank" rel="noopener" aria-label="Emma Wilson's other projects">Other projects</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <footer class="contact" role="contentinfo">
+    <h3><p>Contact us at <a href="mailto:contact@pixelforgestudio.com">contact@pixelforgestudio.com</a></p>
+    <p>Follow us on 
+      <a href="https://twitter.com/pixelforgestudio" target="_blank" rel="noopener">Twitter</a>, 
+      <a href="https://facebook.com/pixelforgestudio" target="_blank" rel="noopener">Facebook</a>, and 
+      <a href="https://instagram.com/pixelforgestudio" target="_blank" rel="noopener">Instagram</a>.
+    </p></h3>
+  </footer>
+</body>
+</html>

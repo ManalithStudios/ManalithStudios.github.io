@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Development Studio Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      color: #333;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background: url('header-background.jpg') center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+    }
+
+    header img {
+      max-width: 300px;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-content h3 {
+      margin: 0 0 10px;
+    }
+
+    .platform-buttons a {
+      margin-right: 10px;
+      padding: 8px 12px;
+      background: #007BFF;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .rewards {
+      margin-top: 15px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .rewards li::before {
+      content: "\f559";
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    .team-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .team-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .team-card h4 {
+      margin: 10px 0 5px;
+    }
+
+    .team-card p {
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="logo.png" alt="Studio Logo">
+  </header>
+
+  <section class="section">
+    <h2>Our Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="project1.jpg" alt="Project Image">
+        <div class="project-content">
+          <h3>Project Title</h3>
+          <p>Short description of the project goes here. Highlight key features or themes.</p>
+          <div class="platform-buttons">
+            <a href="#">Steam</a>
+            <a href="#">Switch</a>
+          </div>
+          <ul class="rewards">
+            <li>Best Indie Game 2023</li>
+            <li>Players' Choice Award</li>
+          </ul>
+        </div>
+		<div class="project-content">
+          <h3>Project Title</h3>
+          <p>Short description of the project goes here. Highlight key features or themes.</p>
+          <div class="platform-buttons">
+            <a href="#">Steam</a>
+            <a href="#">Switch</a>
+          </div>
+          <ul class="rewards">
+            <li>Best Indie Game 2023</li>
+            <li>Players' Choice Award</li>
+          </ul>
+        </div>
+		<div class="project-content">
+          <h3>Project Title</h3>
+          <p>Short description of the project goes here. Highlight key features or themes.</p>
+          <div class="platform-buttons">
+            <a href="#">Steam</a>
+            <a href="#">Switch</a>
+          </div>
+          <ul class="rewards">
+            <li>Best Indie Game 2023</li>
+            <li>Players' Choice Award</li>
+          </ul>
+        </div>
+		<div class="project-content">
+          <h3>Project Title</h3>
+          <p>Short description of the project goes here. Highlight key features or themes.</p>
+          <div class="platform-buttons">
+            <a href="#">Steam</a>
+            <a href="#">Switch</a>
+          </div>
+          <ul class="rewards">
+            <li>Best Indie Game 2023</li>
+            <li>Players' Choice Award</li>
+          </ul>
+        </div>
+		<div class="project-content">
+          <h3>Project Title</h3>
+          <p>Short description of the project goes here. Highlight key features or themes.</p>
+          <div class="platform-buttons">
+            <a href="#">Steam</a>
+            <a href="#">Switch</a>
+          </div>
+          <ul class="rewards">
+            <li>Best Indie Game 2023</li>
+            <li>Players' Choice Award</li>
+          </ul>
+        </div>
+		<div class="project-content">
+          <h3>Project Title</h3>
+          <p>Short description of the project goes here. Highlight key features or themes.</p>
+          <div class="platform-buttons">
+            <a href="#">Steam</a>
+            <a href="#">Switch</a>
+          </div>
+          <ul class="rewards">
+            <li>Best Indie Game 2023</li>
+            <li>Players' Choice Award</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Repeat project-card as needed -->
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Meet the Team</h2>
+    <p>We are a passionate team of creators, designers, and developers bringing worlds to life.</p>
+    <div class="team-cards">
+      <div class="team-card">
+        <h4>Jane Doe</h4>
+        <p>Creative Director</p>
+        <a href="#">Other Projects</a>
+      </div>
+      <div class="team-card">
+        <h4>John Smith</h4>
+        <p>Lead Developer</p>
+        <a href="#">Other Projects</a>
+      </div>
+      <!-- Add 6 more team cards -->
+    </div>
+  </section>
+
+  <footer>
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:info@studio.com">info@studio.com</a></p>
+    <p>Follow us on social media for the latest updates.</p>
+  </footer>
+
+</body>
+
+</html>
