@@ -15,7 +15,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f7f9fc;
       color: #2c3e50;
-      line-height: 1.6;
+      line-height: 1.4;
     }
     a {
       color: #2980b9;
@@ -40,10 +40,10 @@
 
     /* Header */
     header {
-      background-color: #1abc9c;
+      background-color: #121313;
 	  background: url('img/header-bg.jpg') center/cover no-repeat;
       color: white;
-      padding: 8rem 0;
+      padding: 10% 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -92,7 +92,6 @@
 
     .project-image {
       width: 100%;
-      height: 260px;
       object-fit: cover;
     }
 
@@ -153,7 +152,7 @@
 
     /* Team Section */
     .team-intro {
-      max-width: 700px;
+      max-width: 900px;
       margin: 0 auto 3rem;
       font-size: 1.1rem;
       color: #34495e;
@@ -214,11 +213,20 @@
 
     /* Contact info */
     .contact {
-      background-color: #1abc9c;
+      background-color: #121313;
+	  background-image: url(img/map-image.png);
+	  background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	  
+	  display: flex;
+      align-items: center;
+      justify-content: center;
+	  
       color: white;
       padding: 2rem 1rem;
       text-align: center;
-      font-size: 1rem;
+      font-size: 0.8rem;
       box-shadow: inset 0 0 8px rgb(0 0 0 / 0.1);
     }
 
@@ -243,6 +251,7 @@
       margin-top: 15px;
       list-style: none;
       padding: 0;
+	  color: #2972a2;
     }
 
     .rewards li::before {
@@ -250,12 +259,14 @@
       font-family: 'Font Awesome 6 Free';
       font-weight: 900;
       margin-right: 8px;
+	  
     }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
+  
     <div class="container" style="display:flex; align-items:center; justify-content:center;">
       <img src="img/logos/manalith.png" alt="GameDev Logo" />
     </div>
@@ -265,64 +276,106 @@
   <section id="projects" class="container" tabindex="-1">
     <h2 class="section-title">PROJECTS</h2>
     <div class="projects-grid" role="list">
+	
       <!-- Project Card 1 -->
       <article class="project-card" role="listitem" aria-labelledby="proj1-title">
-        <img src="img/portfolio/03-thumbnailnew.jpg" alt="Screenshot from Fantasy Quest" class="project-image" />
+        <img src="img/portfolio/02-thumbnail.jpg" alt="Screenshot from Dungeon Drafters" class="project-image" />
         <div class="project-content">
-          <h3 id="proj1-title">Fantasy Quest</h3>
-		  <div class="platform-buttons" aria-label="Platforms where Fantasy Quest is available">
-            <a href="https://store.steampowered.com/app/123456/FantasyQuest" target="_blank" rel="noopener">Steam</a>
-            <a href="https://www.epicgames.com/store/en-US/p/fantasy-quest" target="_blank" rel="noopener">Epic Games</a>
-            <a href="https://play.google.com/store/apps/details?id=com.pixelforge.fantasyquest" target="_blank" rel="noopener">Google Play</a>
+          <h3 id="proj1-title">DUNGEON DRAFTERS</h3>
+		  <div class="platform-buttons" aria-label="Platforms where Dungeon Drafters is available">
+            <a href="https://store.steampowered.com/app/1824580/Dungeon_Drafters/" target="_blank" rel="noopener">STEAM</a>
+            <a href="https://www.nintendo.com/store/products/dungeon-drafters-switch/" target="_blank" rel="noopener">NINTENDO</a>
+			<a href="https://store.playstation.com/product/UP4127-PPSA18453_00-DDRAFTERSUS00000" target="_blank" rel="noopener">PLAYSTATION</a>
+			<a href="https://www.xbox.com/games/store/dungeon-drafters/9mxns73zp15k" target="_blank" rel="noopener">XBOX</a>
           </div>
-          <p class="project-desc">
-            An immersive open-world RPG that takes players on an epic journey through enchanted lands and mythic battles.
-          </p>
+          <class="project-desc">Explore ancient ruins, loot rare cards, employ clever combos and build the legendary spell deck! (2023)</p>
 		  <ul class="rewards">
-            <li>Best Indie Game 2023</li>
-            <li>Players' Choice Award</li>
+            <li>BIC AWARDS 2023 Grand Prix Winner</li>
+            <li>BIG FESTIVAL Internacional Game Finalist</li>
+			<li>SBGames 2023 Best Design</li>
+			<li>BITSummit 2023 Internacional Award Nominee</li>
           </ul>
           
         </div>
       </article>
-
-      <!-- Project Card 2 -->
-      <article class="project-card" role="listitem" aria-labelledby="proj2-title">
-        <img src="https://via.placeholder.com/400x160?text=Project+2+Image" alt="Screenshot from Space Savers" class="project-image" />
+	  
+	  <!-- Project Card 1 -->
+      <article class="project-card" role="listitem" aria-labelledby="proj1-title">
+        <img src="img/portfolio/01-thumbnail.jpg" alt="Screenshot from Wild Glory" class="project-image" />
         <div class="project-content">
-          <h3 id="proj2-title">Space Savers</h3>
-          <p class="project-desc">
-            A fast-paced multiplayer space shooter with customizable ships and dynamic environments.
-          </p>
-          <div class="platform-buttons" aria-label="Platforms where Space Savers is available">
-            <a href="https://store.steampowered.com/app/654321/SpaceSavers" target="_blank" rel="noopener">Steam</a>
-            <a href="https://www.xbox.com/en-US/games/space-savers" target="_blank" rel="noopener">Xbox</a>
-            <a href="https://apps.apple.com/app/space-savers/id123456789" target="_blank" rel="noopener">App Store</a>
+          <h3 id="proj1-title">WILD GLORY</h3>
+		  <div class="platform-buttons" aria-label="Platforms where Wild Glory is available">
+            <a href="https://store.steampowered.com/app/802740/Wild_Glory/" target="_blank" rel="noopener">STEAM</a>
           </div>
-          <div class="awards" aria-label="Awards won by Space Savers">
-            <img src="https://via.placeholder.com/32x32?text=C" alt="Top Multiplayer Experience" title="Top Multiplayer Experience" />
-          </div>
+          <class="project-desc">Fight against your friends to conquer the Coliseum crowd and become champion! (2018)</>
+		  <ul class="rewards">
+            <li>SBGames 2017 Best Game by Students</li>
+          </ul>
+          
         </div>
       </article>
-
-      <!-- Project Card 3 -->
-      <article class="project-card" role="listitem" aria-labelledby="proj3-title">
-        <img src="https://via.placeholder.com/400x160?text=Project+3+Image" alt="Screenshot from Pixel Racers" class="project-image" />
+	  
+	   <!-- Project Card 1 -->
+      <article class="project-card" role="listitem" aria-labelledby="proj1-title">
+        <img src="img/portfolio/03-thumbnail.jpg" alt="Screenshot from Project Tabula" class="project-image" />
         <div class="project-content">
-          <h3 id="proj3-title">Pixel Racers</h3>
-          <p class="project-desc">
-            A retro-style 2D racing game with fun tracks and competitive online leaderboards.
-          </p>
-          <div class="platform-buttons" aria-label="Platforms where Pixel Racers is available">
-            <a href="https://store.steampowered.com/app/789012/PixelRacers" target="_blank" rel="noopener">Steam</a>
-            <a href="https://www.nintendo.com/games/detail/pixel-racers-switch" target="_blank" rel="noopener">Nintendo Switch</a>
+          <h3 id="proj1-title">???</h3>
+		  <div class="platform-buttons" aria-label="Platforms where Project Tabula is available">
+            <a href="https://pt.wikipedia.org/wiki/T%C3%A1bua_de_esmeralda" target="_blank" rel="noopener">???</a>
           </div>
-          <div class="awards" aria-label="Awards won by Pixel Racers">
-            <img src="https://via.placeholder.com/32x32?text=D" alt="Best Retro Game" title="Best Retro Game" />
-            <img src="https://via.placeholder.com/32x32?text=E" alt="Player Choice Award" title="Player Choice Award" />
-          </div>
+          <class="project-desc">Inscribe arcane glyphs to create bespoke spells and reach to the heart of magic. (2027)</>
+          
         </div>
       </article>
+	  
+	  <!-- Project Card 1 -->
+      <article class="project-card" role="listitem" aria-labelledby="proj1-title">
+        <img src="img/portfolio/05-thumbnail.jpg" alt="Screenshot from WIREBOLT" class="project-image" />
+        <div class="project-content">
+          <h3 id="proj1-title">WIREBOLT </h3>
+		  <div class="platform-buttons" aria-label="Platforms where WIREBOLT is available">
+            <a href="https://lukbebalduke.itch.io/wirebolt" target="_blank" rel="noopener">ITCH</a>
+          </div>
+          <class="project-desc">Electrolize your friends in a dynamic team shifting party game (2018)</>
+		  <ul class="rewards">
+            <li>GGJ Curitiba Winner</li>
+          </ul>
+          
+        </div>
+      </article>
+	  
+	  <!-- Project Card 1 -->
+      <article class="project-card" role="listitem" aria-labelledby="proj1-title">
+        <img src="img/portfolio/06-thumbnail.jpg" alt="Screenshot from Lamparina" class="project-image" />
+        <div class="project-content">
+          <h3 id="proj1-title">LAMPARINA </h3>
+		  <div class="platform-buttons" aria-label="Platforms where Lamparina is available">
+            <a href="https://lukbebalduke.itch.io/lamparina" target="_blank" rel="noopener">ITCH</a>
+          </div>
+          <class="project-desc">Open magic doors by adjusting the projection of light (2019)</>
+		  <ul class="rewards">
+            <li>GGJ Curitiba 3rd Place</li>
+          </ul>
+          
+        </div>
+      </article>
+	  
+	  <!-- Project Card 1 -->
+      <article class="project-card" role="listitem" aria-labelledby="proj1-title">
+        <img src="img/portfolio/04-thumbnail.jpg" alt="Screenshot from Space Jammers" class="project-image" />
+        <div class="project-content">
+          <h3 id="proj1-title">SPACE JAMMERS </h3>
+		  <div class="platform-buttons" aria-label="Platforms where Space Jammers is available">
+            <a href="https://lukbebalduke.itch.io/asteroid-jammers" target="_blank" rel="noopener">ITCH</a>
+          </div>
+          <class="project-desc">Pilot a spaceship and parry enemy fire. Ready to jam? (2024)</>
+		  <ul class="rewards">
+            <li>GGJ Curitiba 2nd Place</li>
+          </ul>
+          
+        </div>
+      </article>
+	  
     </div>
   </section>
 
@@ -330,92 +383,80 @@
   <section id="team" class="container" tabindex="-1">
     <h2 class="section-title">DEVELOPERS</h2>
     <p class="team-intro">
-      PixelForge Studio is a passionate game development team dedicated to crafting memorable games with innovative design, stunning art, and captivating stories. Our eight talented members collaborate across different disciplines to bring these games to life.
+      We are Manalith Studios, a small passionate game development team from Curitiba, Brazil. The eight of us, all met during our college years while making games together and never stopped.
     </p>
     <div class="members-grid" role="list">
       <!-- Member 1 -->
       <article class="member-card" role="listitem">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Portrait of Alex Johnson" class="member-photo" />
-        <div class="member-name">Alex Johnson</div>
-        <div class="member-job">Lead Game Designer</div>
-        <div class="member-projects">
-          <a href="https://github.com/alexjohnson" target="_blank" rel="noopener" aria-label="Alex Johnson's other projects">Other projects</a>
-        </div>
+        <img src="img/team/1.jpg" alt="Portrait of Lucas Bressan" class="member-photo" />
+        <div class="member-name">LUCAS BRESSAN</div>
+        <div class="member-job">Lead Artist</div>
       </article>
+	  
       <!-- Member 2 -->
       <article class="member-card" role="listitem">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Portrait of Maria Chen" class="member-photo" />
-        <div class="member-name">Maria Chen</div>
-        <div class="member-job">Lead Programmer</div>
-        <div class="member-projects">
-          <a href="https://github.com/mariachen" target="_blank" rel="noopener" aria-label="Maria Chen's other projects">Other projects</a>
-        </div>
+        <img src="img/team/2.jpg" alt="Portrait of Lucas Demo" class="member-photo" />
+        <div class="member-name">LUCAS DEMO</div>
+        <div class="member-job">Producer</div>
       </article>
+	  
       <!-- Member 3 -->
       <article class="member-card" role="listitem">
-        <img src="https://randomuser.me/api/portraits/men/53.jpg" alt="Portrait of Liam Smith" class="member-photo" />
-        <div class="member-name">Liam Smith</div>
-        <div class="member-job">Art Director</div>
+        <img src="img/team/3.jpg" alt="Portrait of Leonardo Lima" class="member-photo" />
+        <div class="member-name">LEONARDO LIMA</div>
+        <div class="member-job">Composer</div>
         <div class="member-projects">
           <a href="https://behance.net/liamsmith" target="_blank" rel="noopener" aria-label="Liam Smith's other projects">Other projects</a>
         </div>
       </article>
+	  
       <!-- Member 4 -->
       <article class="member-card" role="listitem">
-        <img src="https://randomuser.me/api/portraits/women/26.jpg" alt="Portrait of Sara Lopez" class="member-photo" />
-        <div class="member-name">Sara Lopez</div>
-        <div class="member-job">3D Artist</div>
-        <div class="member-projects">
-          <a href="https://artstation.com/saralopez" target="_blank" rel="noopener" aria-label="Sara Lopez's other projects">Other projects</a>
-        </div>
+        <img src="img/team/4.jpg" alt="Portrait of Rafael Fressato" class="member-photo" />
+        <div class="member-name">RAFAEL FRESSATO</div>
+        <div class="member-job">Game Designer</div>
       </article>
+	  
       <!-- Member 5 -->
       <article class="member-card" role="listitem">
-        <img src="https://randomuser.me/api/portraits/men/15.jpg" alt="Portrait of Ethan Wright" class="member-photo" />
-        <div class="member-name">Ethan Wright</div>
-        <div class="member-job">Sound Designer</div>
-        <div class="member-projects">
-          <a href="https://soundcloud.com/ethanwright" target="_blank" rel="noopener" aria-label="Ethan Wright's other projects">Other projects</a>
-        </div>
+        <img src="img/team/5.jpg" alt="Portrait of Conrado Feltrin" class="member-photo" />
+        <div class="member-name">CONRADO FELTRIN</div>
+        <div class="member-job">Lead Programmer</div>
       </article>
+	  
       <!-- Member 6 -->
       <article class="member-card" role="listitem">
-        <img src="https://randomuser.me/api/portraits/women/39.jpg" alt="Portrait of Chloe Davis" class="member-photo" />
-        <div class="member-name">Chloe Davis</div>
-        <div class="member-job">UI/UX Designer</div>
-        <div class="member-projects">
-          <a href="https://dribbble.com/chloedavis" target="_blank" rel="noopener" aria-label="Chloe Davis's other projects">Other projects</a>
-        </div>
+        <img src="img/team/6.jpg" alt="Portrait of Gabriel Oliveira" class="member-photo" />
+        <div class="member-name">GABRIEL OLIVEIRA</div>
+        <div class="member-job">Sound Designer</div>
       </article>
+	  
       <!-- Member 7 -->
       <article class="member-card" role="listitem">
-        <img src="https://randomuser.me/api/portraits/men/48.jpg" alt="Portrait of Noah Martinez" class="member-photo" />
-        <div class="member-name">Noah Martinez</div>
-        <div class="member-job">Quality Assurance Lead</div>
+        <img src="img/team/7.jpg" alt="Portrait of a Cat" class="member-photo" />
+        <div class="member-name">BRUNO BULHOES</div>
+        <div class="member-job">Director of Content</div>
         <div class="member-projects">
           <a href="https://linkedin.com/in/noahmartinez" target="_blank" rel="noopener" aria-label="Noah Martinez's other projects">Other projects</a>
         </div>
       </article>
+	  
       <!-- Member 8 -->
       <article class="member-card" role="listitem">
-        <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Portrait of Emma Wilson" class="member-photo" />
-        <div class="member-name">Emma Wilson</div>
-        <div class="member-job">Marketing Manager</div>
-        <div class="member-projects">
-          <a href="https://linkedin.com/in/emmawilson" target="_blank" rel="noopener" aria-label="Emma Wilson's other projects">Other projects</a>
-        </div>
+        <img src="img/team/8.jpg" alt="Portrait of Andrei Brongel" class="member-photo" />
+        <div class="member-name">ANDREI BRONGEL</div>
+        <div class="member-job">Programmer</div>
       </article>
+	  
     </div>
   </section>
 
   <!-- Contact Section -->
   <footer class="contact" role="contentinfo">
-    <h3><p>Contact us at <a href="mailto:contact@pixelforgestudio.com">contact@pixelforgestudio.com</a></p>
-    <p>Follow us on 
-      <a href="https://twitter.com/pixelforgestudio" target="_blank" rel="noopener">Twitter</a>, 
-      <a href="https://facebook.com/pixelforgestudio" target="_blank" rel="noopener">Facebook</a>, and 
-      <a href="https://instagram.com/pixelforgestudio" target="_blank" rel="noopener">Instagram</a>.
-    </p></h3>
+    <h3>
+	<p>Contact us at <a href="mailto:manalithstudios@gmail.com">ManalithStudios@gmail.com</a></p>
+    <p><span class="copyright">Copyright &copy; Manalith Studios 2018-2027</span></p>
+	</h3>
   </footer>
 </body>
 </html>
