@@ -1,301 +1,416 @@
 <!DOCTYPE html>
-<meta http-equiv='cache-control' content='no-cache'> 
-<meta http-equiv='expires' content='0'> 
-<meta http-equiv='pragma' content='no-cache'>
-
 <html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Manalith Studios</title>
+  <style>
+    /* Reset and base styles */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f9fc;
+      color: #2c3e50;
+      line-height: 1.4;
+    }
+    a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 6px;
+    }
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1400px;
+      margin: auto;
+      padding: 0 15px;
+    }
 
-  <head>
+    /* Header */
+    header {
+      background-color: #121313;
+	  background: url('img/header-bg.jpg') center/cover no-repeat;
+      color: white;
+      padding: 10% 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="Developing Indie Games" content="">
-    <meta name="Manalith Studios" content="">
+    header img {
+      margin-right: 1rem;
+    }
 
-    <title>Manalith Studios</title>
+    header h1 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    /* Section titles */
+    h2.section-title {
+      text-align: center;
+      margin: 3rem 0 1rem;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #34495e;
+    }
 
-    <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    /* Project Cards Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(360px,1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
 
-    <!-- Custom styles for this template -->
-    <link href="css/agency.min.css" rel="stylesheet">
+    .project-card {
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+    }
 
-  </head>
+    .project-card:hover {
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+    }
 
-  <body id="page-top">
+    .project-image {
+      width: 100%;
+      object-fit: cover;
+    }
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive" >
-          <ul class="navbar-nav text-uppercase ml-auto" style="margin-left: 0 !important;">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#team">Team</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
+    .project-content {
+      padding: 1rem 1.25rem 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-desc {
+      flex-grow: 1;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* Platform buttons */
+    .platform-buttons {
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .platform-buttons a {
+      background-color: #2980b9;
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: 0 2px 5px rgb(0 0 0 / 0.15);
+      transition: background-color 0.3s ease;
+    }
+
+    .platform-buttons a:hover,
+    .platform-buttons a:focus {
+      background-color: #1f6391;
+    }
+
+    /* Awards thumbnails */
+    .awards {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .awards img {
+      width: 32px;
+      height: 32px;
+      border-radius: 5px;
+      object-fit: contain;
+      border: 1px solid #ccc;
+      background-color: white;
+      box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+    }
+
+    /* Team Section */
+    .team-intro {
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      font-size: 1.1rem;
+      color: #34495e;
+      text-align: center;
+    }
+
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .member-card {
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+      padding: 1rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .member-card:hover {
+      box-shadow: 0 10px 20px rgb(0 0 0 / 0.15);
+    }
+
+    .member-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.75rem;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    }
+
+    .member-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+      color: #2c3e50;
+    }
+
+    .member-job {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #7f8c8d;
+      margin-bottom: 0.75rem;
+    }
+
+    .member-projects a {
+      font-size: 0.9rem;
+      color: #2980b9;
+      font-weight: 600;
+    }
+
+    /* Contact info */
+    .contact {
+      background-color: #121313;
+	  background-image: url(img/map-image.png);
+	  background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	  
+	  display: flex;
+      align-items: center;
+      justify-content: center;
+	  
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.8rem;
+      box-shadow: inset 0 0 8px rgb(0 0 0 / 0.1);
+    }
+
+    .contact a {
+      color: #eafaf9;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+      }
+      header img {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+      }
+    }
+	
+	.rewards {
+      margin-top: 15px;
+      list-style: none;
+      padding: 0;
+	  color: #2972a2;
+    }
+
+    .rewards li::before {
+      content: "\f559";
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      margin-right: 8px;
+	  
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+  
+    <div class="container" style="display:flex; align-items:center; justify-content:center;">
+      <img src="img/logos/manalith.png" alt="GameDev Logo" />
+    </div>
+  </header>
+
+  <!-- Projects Section -->
+  <section id="projects" class="container" tabindex="-1">
+    <h2 class="section-title">PROJECTS</h2>
+    <div class="projects-grid" role="list">
+	
+      <!-- Project Card 1 -->
+      <article class="project-card" role="listitem" aria-labelledby="proj1-title">
+        <img src="img/portfolio/02-thumbnail.jpg" alt="Screenshot from Dungeon Drafters" class="project-image" />
+        <div class="project-content">
+          <h3 id="proj1-title">DUNGEON DRAFTERS</h3>
+		  <div class="platform-buttons" aria-label="Platforms where Dungeon Drafters is available">
+            <a href="https://store.steampowered.com/app/1824580/Dungeon_Drafters/" target="_blank" rel="noopener">STEAM</a>
+            <a href="https://www.nintendo.com/store/products/dungeon-drafters-switch/" target="_blank" rel="noopener">NINTENDO</a>
+			<a href="https://store.playstation.com/product/UP4127-PPSA18453_00-DDRAFTERSUS00000" target="_blank" rel="noopener">PLAYSTATION</a>
+			<a href="https://www.xbox.com/games/store/dungeon-drafters/9mxns73zp15k" target="_blank" rel="noopener">XBOX</a>
+          </div>
+          <class="project-desc">Explore ancient ruins, loot rare cards, employ clever combos and build the legendary spell deck! (2023)</p>
+		  <ul class="rewards">
+            <li>BIC AWARDS 2023 Grand Prix Winner</li>
+            <li>BIG FESTIVAL Internacional Game Finalist</li>
+			<li>SBGames 2023 Best Design</li>
+			<li>BITSummit 2023 Internacional Award Nominee</li>
           </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Header -->
-    <header class="masthead">
-      <div class="container">
-        <div class="intro-text">
-		<img class="img-fluid" src="img/logos/manalith.png" alt="">
-        </div>
-      </div>
-    </header>
-
-    <!-- Services -->
-	
-    <!-- Portfolio Grid -->
-    <section class="bg-light" id="portfolio">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Projects</h2>
-          </div>
-        </div>
-        <div class="row">
-		
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" target="_blank" href="https://store.steampowered.com/app/802740/Wild_Glory/">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Wild Glory</h4>
-              <p class="text-muted">Conquer the Coliseum crowd and become the champion! (2018)</p>
-            </div>
-          </div>
-		  
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" target="_blank" href="https://store.steampowered.com/app/1824580/Dungeon_Drafters/">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Dungeon Drafters</h4>
-              <p class="text-muted">A World where magic is cards and cards are magic! (2023)</p>
-            </div>
-          </div>
-		  
-		  <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" target="_blank" href="https://store.steampowered.com/app/1824580/Dungeon_Drafters/">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/03-thumbnailnew.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>-</h4>
-              <p class="text-muted">Inscribe arcane glyphs to create bespoke spells (2027)</p>
-            </div>
-          </div>
-		  
-		  <!---->
-		  
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" target="_blank" href="https://lukbebalduke.itch.io/asteroid-jammers">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Space Jammers</h4>
-              <p class="text-muted">Pilot a spaceship and parry enemy fire. Ready to jam? (2024)</p>
-            </div>
-          </div>
-		  
-		  <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" target="_blank" href="https://lukbebalduke.itch.io/lamparina">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Wirebolt</h4>
-              <p class="text-muted">destroy other players by electrolyzing them! (2018)</p>
-            </div>
-          </div>
-		  
-		  <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" target="_blank" href="https://lukbebalduke.itch.io/lamparina">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Lamparina</h4>
-              <p class="text-muted">Open magic doors by adjusting the projection of light (2019)</p>
-            </div>
-          </div>
-		  
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-	
-    <!-- Team -->
-    <section class="bg-light" id="team">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">About Us</h2>
-            <h3 class="section-subheading text-muted" max-width="30px">We are Manalith Studios, a small passionate game development team from Curitiba, Brazil. The eight of us, all met during our college years while making games together and never stopped. </h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-4" style="max-width:25%;">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="">
-              <h4>Lucas Bressan</h4>
-              <p class="text-muted">Lead Artist</p>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-4" style="max-width:25%;">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
-              <h4>Lucas Demo</h4>
-              <p class="text-muted">Producer</p>
-            </div>
-          </div>
-          <div class="col-sm-4" style="max-width:25%;">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
-              <h4>Leonardo Lima</h4>
-              <p class="text-muted">Composer</p>
-              </ul>
-            </div>
-          </div>
-		  <div class="col-sm-4" style="max-width:25%;">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/4.jpg" alt="">
-              <h4>Rafael Fressato</h4>
-              <p class="text-muted">Game Designer</p>
-              </ul>
-            </div>
-          </div>
-        </div>
-		<div class="row">
           
-		<div class="col-sm-4" style="max-width:25%;">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/5.jpg" alt="">
-              <h4>Conrado Feltrin</h4>
-              <p class="text-muted">Lead Programmer</p>
-            </div>
-          </div>
-          <div class="col-sm-4" style="max-width:25%;">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/6.jpg" alt="">
-              <h4>Gabriel Oliveira</h4>
-              <p class="text-muted">Sound Designer</p>
-              </ul>
-            </div>
-          </div>
-		  <div class="col-sm-4" style="max-width:25%;">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/7.jpg" alt="">
-              <h4>Bruno Bulhoes</h4>
-              <p class="text-muted">Content Designer</p>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-4" style="max-width:25%;">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/8.jpg" alt="">
-              <h4>Andrei Brongel</h4>
-              <p class="text-muted">Programmer</p>
-            </div>
-          </div>
         </div>
-		<p></p>
-		<p></p>
-		<p></p>
-		<p></p>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Contact Us</h2>			
-			<h4 class="section-heading "> ✉ manalithstudios@gmail.com</h4>
-			<p></p>
+      </article>
+	  
+	  <!-- Project Card 1 -->
+      <article class="project-card" role="listitem" aria-labelledby="proj1-title">
+        <img src="img/portfolio/01-thumbnail.jpg" alt="Screenshot from Wild Glory" class="project-image" />
+        <div class="project-content">
+          <h3 id="proj1-title">WILD GLORY</h3>
+		  <div class="platform-buttons" aria-label="Platforms where Wild Glory is available">
+            <a href="https://store.steampowered.com/app/802740/Wild_Glory/" target="_blank" rel="noopener">STEAM</a>
           </div>
+          <class="project-desc">Fight against your friends to conquer the Coliseum crowd and become champion! (2018)</>
+		  <ul class="rewards">
+            <li>SBGames 2017 Best Game by Students</li>
+          </ul>
+          
         </div>
-
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <span class="copyright">Copyright &copy; Manalith Studios 2018-2027</span>
+      </article>
+	  
+	   <!-- Project Card 1 -->
+      <article class="project-card" role="listitem" aria-labelledby="proj1-title">
+        <img src="img/portfolio/03-thumbnail.jpg" alt="Screenshot from Project Tabula" class="project-image" />
+        <div class="project-content">
+          <h3 id="proj1-title">???</h3>
+		  <div class="platform-buttons" aria-label="Platforms where Project Tabula is available">
+            <a href="https://pt.wikipedia.org/wiki/T%C3%A1bua_de_esmeralda" target="_blank" rel="noopener">???</a>
           </div>
-          <div class="col-md-4">
-          </div>
+          <class="project-desc">Inscribe arcane glyphs to create bespoke spells and reach to the heart of magic. (2027)</>
+          
         </div>
-      </div>
-    </footer>
+      </article>
+	  
+    </div>
+  </section>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Team Section -->
+  <section id="team" class="container" tabindex="-1">
+    <h2 class="section-title">DEVELOPERS</h2>
+    <p class="team-intro">
+      We are Manalith Studios, a small game development team from Curitiba, Brazil. The eight of us met during college while making games together and never stopped.
+<br><br>
+	We create colorful, high-energy indie games with our own take on familiar genres. We are independent, focused on PC and consoles, and we’re always around to chat on our Discord game servers.
+    </p>
+    <div class="members-grid" role="list">
+      <!-- Member 1 -->
+      <article class="member-card" role="listitem">
+        <img src="img/team/1.jpg" alt="Portrait of Lucas Bressan" class="member-photo" />
+        <div class="member-name">LUCAS BRESSAN</div>
+        <div class="member-job">Lead Artist</div>
+      </article>
+	  
+      <!-- Member 2 -->
+      <article class="member-card" role="listitem">
+        <img src="img/team/2.jpg" alt="Portrait of Lucas Demo" class="member-photo" />
+        <div class="member-name">LUCAS DEMO</div>
+        <div class="member-job">Producer</div>
+      </article>
+	  
+      <!-- Member 3 -->
+      <article class="member-card" role="listitem">
+        <img src="img/team/3.jpg" alt="Portrait of Leonardo Lima" class="member-photo" />
+        <div class="member-name">LEONARDO LIMA</div>
+        <div class="member-job">Composer</div>
+        <div class="member-projects">
+          <a href="-" target="_blank" rel="noopener" aria-label="Liam Smith's other projects">Other projects</a>
+        </div>
+      </article>
+	  
+      <!-- Member 4 -->
+      <article class="member-card" role="listitem">
+        <img src="img/team/4.jpg" alt="Portrait of Rafael Fressato" class="member-photo" />
+        <div class="member-name">RAFAEL FRESSATO</div>
+        <div class="member-job">Game Designer</div>
+      </article>
+	  
+      <!-- Member 5 -->
+      <article class="member-card" role="listitem">
+        <img src="img/team/5.jpg" alt="Portrait of Conrado Feltrin" class="member-photo" />
+        <div class="member-name">CONRADO FELTRIN</div>
+        <div class="member-job">Lead Programmer</div>
+      </article>
+	  
+      <!-- Member 6 -->
+      <article class="member-card" role="listitem">
+        <img src="img/team/6.jpg" alt="Portrait of Gabriel Oliveira" class="member-photo" />
+        <div class="member-name">GABRIEL OLIVEIRA</div>
+        <div class="member-job">Sound Designer</div>
+      </article>
+	  
+      <!-- Member 7 -->
+      <article class="member-card" role="listitem">
+        <img src="img/team/7.jpg" alt="Portrait of a Cat" class="member-photo" />
+        <div class="member-name">BRUNO BULHOES</div>
+        <div class="member-job">Director of Content</div>
+        <div class="member-projects">
+          <a href="-" target="_blank" rel="noopener" aria-label="Noah Martinez's other projects">Other projects</a>
+        </div>
+      </article>
+	  
+      <!-- Member 8 -->
+      <article class="member-card" role="listitem">
+        <img src="img/team/8.jpg" alt="Portrait of Andrei Brongel" class="member-photo" />
+        <div class="member-name">ANDREI BRONGEL</div>
+        <div class="member-job">Programmer</div>
+      </article>
+	  
+    </div>
+  </section>
 
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Contact form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="js/agency.min.js"></script>
-
-  </body>
-
+  <!-- Contact Section -->
+  <footer class="contact" role="contentinfo">
+    <h3>
+	<p>Contact us at <a href="mailto:manalithstudios@gmail.com">ManalithStudios@gmail.com</a></p>
+    <p><span class="copyright">Copyright &copy; Manalith Studios 2018-2027</span></p>
+	</h3>
+  </footer>
+</body>
 </html>
